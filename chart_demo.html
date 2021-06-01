@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumb Chart</title>
+    
+    <link rel="stylesheet" href="./chart.css">
+    <script src="./chart.js"></script>
+    <script>
+        function buildChart(){
+            
+        let dataSet = [
+            {
+                key: "A1",
+                value: 20
+            },
+            {
+                key: "B1",
+                value: 40
+            },
+            {
+                key: "C1",
+                value: 30
+            },
+            {
+                key: "D1",
+                value: 70
+            },
+            {
+                key: "E1",
+                value: 40
+            }
+            ,
+            {
+                key: "F1",
+                value: 40
+            }
+            ,
+            {
+                key: "G1",
+                value: 29
+            },
+            {
+                key: "C1",
+                value: 10
+            },
+            {
+                key: "D1",
+                value: 30
+            },
+            {
+                key: "L1",
+                value: 12
+            },
+            {
+                key: "C1",
+                value: 30
+            },
+            {
+                key: "D1",
+                value: 95
+            },
+            {
+                key: "E1",
+                value: 8
+            },
+            {
+                key: "G1",
+                value: 29
+            },
+            {
+                key: "C1",
+                value: 10
+            },
+            {
+                key: "D1",
+                value: 30
+            },
+            {
+                key: "L1",
+                value: 12
+            },
+            {
+                key: "C1",
+                value: 30
+            },
+            {
+                key: "D1",
+                value: 95
+            },
+            {
+                key: "E1",
+                value: 8
+            }
+        ];
+        let params = {
+            config: {
+                type: "linear_bar",
+                subType: "horizontal",
+                title: "A bar chart showing information",
+                subTitle: "4 apples; 8 bananas; 15 kiwis; 16 oranges; 23 lemons",
+                fontStyle: "default",
+                fontSize: "14px",
+                id: "myFirstChart"
+            },
+            width: '500',
+            height: '300',
+            xlabel: {},
+            ylabel: {},
+
+            data: dataSet
+        }
+        dumbChart.generate(params);
+        }
+    </script>
+    
+</head>
+<body>
+    <button onclick="buildChart()">Build chart</button>
+    <svg style="display: none;" class="chart" width="100" height="200" aria-labelledby="title desc" role="img">
+        <!-- <title id="title">A bar chart showing information</title>
+        <desc id="desc">4 apples; 8 bananas; 15 kiwis; 16 oranges; 23 lemons</desc> -->
+        <g class="bar">
+          <rect width="20" height="100"></rect>
+          <text x="65" y="9.5" dx=".35em">20 Orange</text>
+        </g>
+        <!-- <g class="bar">
+          <rect width="20" height="180" x="20" y="10"></rect> -->
+                                            <!-- y = 200(chart height) - 180(rect height) -10(margin-top) -->
+                                            <!-- height = 200(max height)-10(margin-bottom)-10(margin-top) -->
+          <!-- <text x="85" y="28" dy=".35em">40 bananas</text>
+        </g> -->
+        <!-- <g class="bar">
+          <rect width="20" height="119" x="40" y="10"></rect>
+          <text x="65" y="48" dy=".35em">30 kiwis</text>
+        </g> -->
+      </svg>
+</body>
+</html>
